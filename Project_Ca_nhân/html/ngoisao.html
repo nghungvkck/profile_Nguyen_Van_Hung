@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        @keyframes fall {
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    var createStar = () => {
+        var star = document.createElement("div");
+        star.classList.add("star");
+        document.body.appendChild(star);
+
+        // Thuộc tính ngẫu nhiên cho ngôi sao
+        const size = Math.random() * 3 + 1;
+        const starX = Math.random() * window.innerWidth;
+        const duration = Math.random() * 2 + 1;
+
+        // Gán thuộc tính CSS
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${starX}px`;
+        star.style.top = `-10px`;
+        star.style.animation = `fall ${duration}s linear forwards`;
+
+        // Xóa ngôi sao sau khi rơi xuống
+        setTimeout(() => {
+            star.remove();
+        }, duration * 1000);
+    };
+
+    // Tạo ngôi sao liên tục
+    setInterval(createStar, 100);
+</script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    /* css cho ngooisao  */
+    body{
+      background: black;
+      overflow: hidden;
+    }
+
+.star{
+  position: absolute;
+  background-color: white;
+  /*  taoj hieue uwnsg trong suoot */
+  box-shadow: 0 0 5px white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  100%{
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  
+}
+
+  </style>
+  <script>
+    var createStar =()=>{
+      // tạo ra thẻ div tương trưng cho 1 ngôi sao 
+      var star = document.createElement("div");
+      
+      //thêm class trả vào thẻ div
+      star.classList.add("star");
+      
+      //thêm thẻ ngôi sao ào trong body
+      document.body.appendChild(star);
+
+      // tạo ngẫu nhiên các thuộc tính css cho ngoi sao 
+      const size = Math.random()*3 +1;
+      const starX = Math.random()* window.innerWidth;
+      const duration  = Math.random()*2+1;
+
+
+      // css ngaaux nhiên thuộc tính cho ngôi soa 
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.left = `${starX}px`;
+      star.style.top =`10px`;
+      star.style.animation = ` fall ${duration}s linear forwards`
+
+      // cài đặt thời gian 
+      setTimeout(()=>{
+        star.remove();
+      },duration*1000);
+    }
+
+
+    //lapwj laij voo hanj vieejc tao ra ngoois ao 
+    setInterval(createStar, 100);
+  </script>
+</body>
+</html>

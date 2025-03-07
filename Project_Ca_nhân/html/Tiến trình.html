@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0; /* Ban đầu thanh tiến trình có chiều rộng 0 */
+    background-color: #4caf50; /* Màu của thanh tiến trình */
+    border-radius: 10px;
+    transition: width 1s ease; /* Hiệu ứng mượt mà */
+}
+    </style>
+    <div class="progress-container">
+        <div class="progress-bar" data-progress="80"></div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-bar" data-progress="90"></div>
+    </div>
+
+
+
+    <script>
+        const progressBars = document.querySelectorAll('.progress-bar');
+
+progressBars.forEach(bar => {
+    const targetWidth = bar.getAttribute('data-progress'); // Lấy giá trị từ thuộc tính data-progress
+    bar.style.width = '0'; // Đặt chiều rộng ban đầu là 0
+    setTimeout(() => {
+        bar.style.width = targetWidth + '%'; // Thay đổi chiều rộng đến giá trị mong muốn
+    }, 500); // Đợi 0.5 giây trước khi bắt đầu hiệu ứng
+});
+    </script>
+</body>
+</html>

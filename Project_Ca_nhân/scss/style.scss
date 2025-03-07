@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+  background-color: #000414;
+}
+
+
+
+header {
+  height: auto;
+  /* Background gradient với nhiều màu sắc hơn */
+  background: linear-gradient(45deg,#000414, #242dad, rgb(36, 36, 127) , #001eff );
+  background-size: 400% 400%;
+  animation: gradientBG 4s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 100%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.header{
+  // border: solid rebeccapurple;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px 0px;
+  font-size: 30px;
+  a{
+    color: wheat;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  a:hover {
+    animation: bigSize 1s ease-in-out forwards;
+  }
+  
+  @keyframes bigSize {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.4);
+    }
+  }
+}
+
+
+
+.main{
+  // border: solid rebeccapurple;
+  text-align: left;
+  padding: 30px;
+  color: white;
+  margin: 40px;
+
+  &__infomation{
+    font-size: 30px;
+    font-weight: 600;
+    ol{
+      list-style-type: circle;
+      li{
+        margin: 30px;
+      }
+    }
+
+
+    ol{
+      li:hover{
+        color: #001eff;
+      }
+    }
+
+
+  }
+  &__img{
+    &--hung{
+      text-align: center;
+      img{
+        width: 400px;
+        height: auto;
+      }
+    }
+  }
+}
+
+
+.footer{
+  &__title{
+    color: white;
+    font-size: 24px;
+  }
+
+  &__content{
+    ol{
+      list-style: none;
+      li{
+        font-size: 18px;
+        margin-right: 10px
+      }
+    }
+
+
+    i{
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  }
+}
+
+
+
+.modal{
+  
+  .modal-content{
+    background-color: #000414;
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;
+    .modal-header{
+      display: flex;
+      justify-content: center;
+      color: #186CFF;
+      font-size: 30px;
+    }
+
+    .modal-body{
+      color: #186CFF;
+      font-size: 24px;
+    }
+    .modal-footer{
+      display: flex;
+      justify-content: center;
+      button{
+        font-size: 20px;
+      }
+    }
+  }
+}
